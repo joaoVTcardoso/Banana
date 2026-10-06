@@ -1,4 +1,4 @@
-/* Integrantes: Nome 1, Nome 2, Nome 3 */
+
 #include <stdio.h>
 
 int main(){
