@@ -53,6 +53,8 @@ int main(){
                         
                         printf("Qual o valor desejado para a tranferencia: \n");
                         scanf("%f", &valorDeposito);
+
+                        saldo = saldo - valorDeposito;
                         
                         printf("Voce fez uma transferencia para %c de %.2f\n", destinatario, valorDeposito);
                     }
