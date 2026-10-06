@@ -2,9 +2,9 @@
 
 int main(){
 
-    int opcao = 0;
+    int opcao = 0, destino;
     char destinatario;
-    float valorDeposito;
+    float valorDeposito, saldo = 0;
     
     while (opcao != 1){
         /* Menu de entrada */
@@ -33,18 +33,42 @@ int main(){
 
                 /* Opcoes do menu de transferencia */
                 if (opcao == 1){
-                    printf("Para quem deseja destinar a tranferencia: \n");
-                    scanf(" %c", &destinatario);
-                    
-                    printf("Qual o valor desejado para a tranferencia: \n");
-                    scanf("%f", &valorDeposito);
-                    
-                    printf("Voce fez uma transferencia para %c de %f\n", destinatario, valorDeposito);
+                    printf("\nPara onde deseja destinar a transferencia: \n");
+                    printf("(1) Propria\n");
+                    printf("(2) Transferir para outros\n");
+                    printf("\nDigite opcao desejada: ");
+                    scanf("%d", &destino);
+
+                    if (destino == 1){
+                        printf("Qual o valor desejado para o deposito: \n");
+                        scanf("%f", &valorDeposito);
+
+                        saldo = saldo + valorDeposito;
+
+                        printf("Voce depositou %.2f na sua conta\n", valorDeposito);
+                    }
+                    else if (destino == 2){
+                        printf("Para quem deseja destinar a tranferencia: \n");
+                        scanf(" %c", &destinatario);
+                        
+                        printf("Qual o valor desejado para a tranferencia: \n");
+                        scanf("%f", &valorDeposito);
+                        
+                        printf("Voce fez uma transferencia para %c de %.2f\n", destinatario, valorDeposito);
+                    }
+                    else{
+                        printf("Opcao invalida\n");
+                    }
                     
                 }
                 else if (opcao == 2)
                 {
-                    printf("prencher");
+                    if (saldo == 0){
+                        printf("vc eh pobre vc n depositou nada na conta ainda\n");
+                    }
+                    else{
+                        printf("Seu saldo eh: %.2f\n", saldo);
+                    }
                 }
                 else if (opcao == 3)
                 {
