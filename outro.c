@@ -2,8 +2,8 @@
 
 int main(){
 
-    int opcao;
-    char destinatario[11];
+    int opcao = 0;
+    char destinatario;
     float valorDeposito;
     
     while (opcao != 1){
@@ -17,27 +17,29 @@ int main(){
 
         if (opcao == 1){
 
-            /* Menu de transferencia */
-            printf("\n--- Area de Transferencia ---\n");
-            printf("\n(1) Fazer um deposito\n");
-            printf("(2) Verificar saldo\n");
-            printf("(3) Opcao 3\n");
-            printf("(4) Sair\n");
-
-            printf("\nDigite opcao desejada: ");
-            scanf("%d", &opcao);
+            opcao = 0;
 
             while (opcao != 4)
             {
+                /* Menu de transferencia */
+                printf("\n--- Area de Transferencia ---\n");
+                printf("\n(1) Fazer um deposito\n");
+                printf("(2) Verificar saldo\n");
+                printf("(3) Opcao 3\n");
+                printf("(4) Sair\n");
+
+                printf("\nDigite opcao desejada: ");
+                scanf("%d", &opcao);
+
                 /* Opcoes do menu de transferencia */
                 if (opcao == 1){
                     printf("Para quem deseja destinar a tranferencia: \n");
-                    scanf("%c", &destinatario);
+                    scanf(" %c", &destinatario);
                     
                     printf("Qual o valor desejado para a tranferencia: \n");
                     scanf("%f", &valorDeposito);
                     
-                    printf("Voce fez uma transferencia para %c de %f", destinatario, valorDeposito);
+                    printf("Voce fez uma transferencia para %c de %f\n", destinatario, valorDeposito);
                     
                 }
                 else if (opcao == 2)
@@ -52,6 +54,7 @@ int main(){
             }
         } 
         else{
+            printf("\nOperacao finalizada.\n");
             return 0;
         }
 
